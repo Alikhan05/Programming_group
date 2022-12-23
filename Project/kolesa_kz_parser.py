@@ -16,7 +16,7 @@ def car_informations(url):
             car_info = tree.xpath(f'//*[@class="offer__parameters"]/dl[{i}]/dd/text()')
             car_information_values.append(car_info[0])
         info_dict = zip(car_characteristics ,car_information_values)
-        print(dict(info_dict))
+        return dict(info_dict)
 
 
 
@@ -53,5 +53,4 @@ result = parse_kolesa_kz(car_mark,car_condition,car_model,car_location,car_body)
 print(result)
 
 car_informations(result[0])
-
 
